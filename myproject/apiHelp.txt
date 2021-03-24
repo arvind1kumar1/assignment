@@ -1,0 +1,30 @@
+#create user
+api=>localhost:8000/createuser
+{"email":"email1@gmail.com","password":"abc123","userType":"user","amount":5000}
+{"email":"email2@gmail.com","password":"abc123","userType":"user","amount":5000}
+
+#create manager
+api=>localhost:8000/createuser
+{"email":"manager1@gmail.com","password":"abc123","userType":"manager","amount":5000}
+
+#make transaction
+api=>localhost:8000/transaction
+{"debiterEmail":"email1@gmail.com","receiverEmail":"email2@gmail.com","amount":1000}
+
+#check enquiry
+api=>localhost:8000/enquiry
+{"email":"email1@gmail.com"}
+
+#get excel and records of user
+api=>localhost:8000/transaction_history
+#for all user
+{"email":"manager1@gmail.com","userEmail":"All","startTime":"2021-03-24 1:39:07","endTime":"2021-03-24 20:39:07"}
+#for particular user
+{"email":"manager1@gmail.com","userEmail": "email1@gmail.com","startTime":"2021-03-24 1:39:07","endTime":"2021-03-24 20:39:07"}
+#for some users
+{"email":"manager1@gmail.com","userEmail":["email1@gmail.com","email2@gmail.com"],"startTime":"2021-03-24 1:39:07","endTime":"2021-03-24 20:39:07"}
+
+
+#see excel of user in 
+downloaded excel see in sendExcel folder
+
